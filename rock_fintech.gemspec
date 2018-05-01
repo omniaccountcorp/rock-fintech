@@ -9,15 +9,15 @@ Gem::Specification.new do |spec|
   spec.authors       = ["chenpengyu"]
   spec.email         = ["chpy15@gmail.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because RubyGems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{钜石存管平台的 SDK}
+  spec.description   = %q{上饶银行的存管实现}
+  spec.homepage      = "https://github.com/omniaccountcorp/rock-fintech"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
   if spec.respond_to?(:metadata)
-    spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
+    spec.metadata["allowed_push_host"] = "https://rubygems.org"
   else
     raise "RubyGems 2.0 or newer is required to protect against " \
       "public gem pushes."
@@ -33,4 +33,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.16"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
+  spec.add_development_dependency 'macaddr', '~> 1.7', '>= 1.7.1'
+  spec.add_development_dependency 'byebug', '~> 9.1'
+  spec.add_development_dependency 'faker', '~> 1.8', '>= 1.8.4'
 end
