@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.name          = "rock_fintech"
   spec.version       = RockFintech::VERSION
   spec.authors       = ["chenpengyu"]
-  spec.email         = ["chpy15@gmail.com"]
+  spec.email         = ["chenpengyu@omniaccount.com"]
 
   spec.summary       = %q{钜石存管平台的 SDK}
   spec.description   = %q{上饶银行的存管实现}

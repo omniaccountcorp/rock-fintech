@@ -4,11 +4,12 @@ module RockFintech
 
     SIGN_TYPE = 'MD5'
     VERSION = '2.0.0' # 版本号
+    ENCODE = 'UTF-8'
 
     def self.post(service, params, config, post_path, version=VERSION)
       version = VERSION if version.nil?
       post_body = get_body(service, params, config, version)
-      uri = URI(config[:server_url] + post_path)
+      uri = URI("#{config[:server_url]}/#{version}/#{post_path}")
 
       RockFintech.logger.info "[#{service}] 请求内容为：\n#{params}\n"
       RockFintech.logger.info "[#{service}(#{uri})] 最终发送内容为：\n#{post_body}\n"
@@ -52,11 +53,12 @@ module RockFintech
       data = {
         version: version,
         service: service,
-        partner: config[:partner_id],
         sign: Sign::MD5.sign(params.to_json, config[:md5_key]),
         signType: SIGN_TYPE,
-        reqData: params.to_json,
+        encode: ENCODE,
       }
+
+      data << params
 
       random_key = RockFintech::Utils.random_key
       body = {

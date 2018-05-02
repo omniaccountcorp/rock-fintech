@@ -53,10 +53,14 @@ module RockFintech
         request_params: request_params,
         response: response,
         flow_id: response.nil? ? nil : response.flow_id,
-        error_code: response.nil? ? nil : response.data[:errorCode],
-        error_msg: response.nil? ? nil : response.data[:errorMsg],
+        code: response.nil? ? nil : response.data[:code],
+        msg: response.nil? ? nil : response.data[:msg],
         data: response.nil? ? nil : response.data,
       }
+    end
+
+    # TODO: 生成唯一的 uuid
+    def self.uuid
     end
 
   end
