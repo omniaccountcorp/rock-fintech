@@ -9,6 +9,10 @@
 /test/tmp/
 /test/version_tmp/
 /tmp/
+/spec/support/config/config.yml
+
+.byebug_history
+Gemfile.lock
 
 # Used by dotenv library to load environment variables.
 # .env
