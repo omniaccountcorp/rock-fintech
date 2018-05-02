@@ -33,6 +33,7 @@ module RockFintech
     end
 
     private
+
     def recursive_include_api(module_chain)
       modules = eval("#{module_chain}.constants").each{ |constant| eval("#{module_chain}::#{constant}").class.kind_of?(Module) }
 
