@@ -26,21 +26,21 @@ module RockFintech
           # 查询类 api，http 没成功都返回 pending
           return res unless response.http_success?
         else
-          raise "未知的请求类型，请选择设置：操作类（:operate）/查询类(:query)"
+          raise '未知的请求类型，请选择设置：操作类（:operate）/查询类(:query)'
         end
 
         # 确定的错误
-        if fail_codes.include?(response.data[:errorCode])
-          res[:result] = "F"
+        if fail_codes.include?(response.data[:code])
+          res[:result] = 'F'
           return res
         end
 
         # 其余 api 错误不知道
-        return res unless response.data[:errorCode].nil?
+        return res unless response.data[:code].nil?
 
         # 确定的成功返回码
-        if success_codes.include?(response.data[:resultCode])
-          res[:result] = "S"
+        if success_codes.include?(response.data[:code])
+          res[:result] = 'S'
         end
 
         res
