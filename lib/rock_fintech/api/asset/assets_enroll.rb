@@ -13,9 +13,18 @@ module RockFintech
         #   * :code [String] 结果代码
         #   * :msg [String] 结果信息
         #   * :data: 具体业务返回信息
-        #       * :out_serial_no [String] 申请流水号
-        #       * :order_id [String] 订单号
-        #       * :url [String] 页面跳转 url
+        #       * :asset_no [String] 标的编号
+        #       * :asset_brief [String] 产品描述
+        #       * :card_no [String] 借款人电子账号
+        #       * :name [String] 借款金额
+        #       * :loan_term [String] 项目期限
+        #       * :issue_date [String] 发标日期
+        #       * :state [String] 记录状态: (0: 空标, 1: 投标, 2: 流标, 3: 满标, 4: 已撤销)
+        #       * :warrant_card_no [String] 担保人人电子账号
+        #       * :warrant_name [String] 担保人姓名
+        #       * :borrow_card_no [String] 名义借款人电子账户
+        #       * :debtor_card_no [String] 收款人电子账号
+        #       * :third_custom [String] 第三方平台保留域
         #
         def assets_enroll(asset_no, asset_brief, card_no,
                           amount, interest_type, loan_term,

@@ -13,9 +13,15 @@ module RockFintech
         #   * :code [String] 结果代码
         #   * :msg [String] 结果信息
         #   * :data: 具体业务返回信息
-        #       * :out_serial_no [String] 申请流水号
-        #       * :order_id [String] 订单号
-        #       * :url [String] 页面跳转 url
+        #       * :asset_no [String] 标的编号
+        #       * :card_no [String] 借款人电子账号
+        #       * :name [String] 借款人姓名
+        #       * :amount [String] 借款金额
+        #       * :issue_date [String] 发表日期
+        #       * :state [String] 记录状态: (0: 空标, 1: 投标, 2: 流标, 3: 满标, 4: 已撤销)
+        #       * :warrant_card_no [String] 担保人人电子账号
+        #       * :warrant_name [String] 担保人姓名
+        #       * :third_custom [String] 第三方平台保留域
         #
         def assets_revoke(asset_no, card_no, amount, third_custom="",
                           devise='000001', remark='')
