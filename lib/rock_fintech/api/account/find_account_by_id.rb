@@ -3,7 +3,7 @@ module RockFintech
   module Api
     module Account
       module FindAccountById
-        # 按手机号查询电子账号信息
+        # 按身份证号查询电子账号信息
         #
         # @return [ Hash ] 结果集
         #   * :result [String] "S"/"F"/"P"
