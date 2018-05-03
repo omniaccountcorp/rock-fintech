@@ -10,4 +10,11 @@ RSpec.describe '电子账户余额查询' do
 
     expect(res[:code]).to eq('RD000006')
   end
+
+  it '查询成功' do
+    res = client.account_balance('86666882002000446801', '13000404246')
+
+    puts res[:data]
+    expect(res[:code]).to eq('RD000000')
+  end
 end
