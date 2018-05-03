@@ -28,6 +28,10 @@ module RockFintech
         @_sign_borrower_p ||= []
       end
 
+      def self.sign_transfer_p
+        @_sign_transfer_p ||= []
+      end
+
     end # module ErrorCode
   end
 end
