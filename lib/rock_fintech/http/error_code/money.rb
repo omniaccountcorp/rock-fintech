@@ -24,6 +24,10 @@ module RockFintech
         @_coupon_withdraw ||= []
       end
 
+      def self.sign_borrower_p
+        @_sign_borrower_p ||= []
+      end
+
     end # module ErrorCode
   end
 end

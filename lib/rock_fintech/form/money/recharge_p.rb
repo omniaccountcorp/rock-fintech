@@ -1,7 +1,7 @@
 # coding: utf-8
 module RockFintech
   module Form
-    module Account
+    module Money
       module RechargeP
         # 绑定卡到电子账户充值
         #

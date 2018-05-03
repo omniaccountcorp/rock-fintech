@@ -1,7 +1,7 @@
 # coding: utf-8
 module RockFintech
   module Form
-    module Account
+    module Money
       module WithdrawP
         # 提现
         #
