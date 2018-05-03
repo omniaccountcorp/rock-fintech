@@ -15,6 +15,10 @@ module RockFintech
       def self.account_credits
         @_account_credits ||= %w[RD000203 RD000537]
       end
+
+      def account_transaction_query
+        @_account_transaction_query ||= %w[]
+      end
     end # module ErrorCode
   end
 end
