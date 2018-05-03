@@ -11,6 +11,10 @@ module RockFintech
       def self.marketing_query
         @_marketing_query ||= %w[ ]
       end
+
+      def self.account_credits
+        @_account_credits ||= %w[RD000203 RD000537]
+      end
     end # module ErrorCode
   end
 end
