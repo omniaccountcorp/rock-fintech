@@ -16,7 +16,7 @@ module RockFintech
         #       * :order_no [String] 订单号
         #       * :amount [Number] 金额
         #
-        def bank_recharge(card_no, bank_type, call_back_url, customer_no, redirect_url,
+        def bank_recharge(card_no, bank_type, callback_url, customer_no, redirect_url,
                           product_name, product_detail, order_no, bank_name, bank_id_no, amount,
                           devise='000001', remark='')
           service = 'bank_recharge'
@@ -24,7 +24,7 @@ module RockFintech
           params = {
             card_no: card_no,
             bank_type: bank_type,
-            call_back_url: call_back_url,
+            callback_url: callback_url,
             customer_no: customer_no,
             redirect_url: redirect_url,
             product_name: product_name,
@@ -37,7 +37,7 @@ module RockFintech
             custom: remark,
           }
 
-          res = operate_post(:operate, service, params, post_path, Http::ErrorCode.bank_recharge, ['RD000000'])
+          res = operate_post(:operate, service, params, Http::ErrorCode.bank_recharge, ['RD000000'])
 
           RockFintech.logger.info res
 
