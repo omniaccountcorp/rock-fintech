@@ -1,3 +1,4 @@
+# coding: utf-8
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
@@ -7,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.name          = "rock_fintech"
   spec.version       = RockFintech::VERSION
   spec.authors       = ["chenpengyu"]
-  spec.email         = ["chenpengyu@omniaccount.com"]
+  spec.email         = ["gandalf@omniaccount.com"]
 
   spec.summary       = %q{钜石存管平台的 SDK}
   spec.description   = %q{上饶银行的存管实现}
@@ -36,4 +37,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'macaddr', '~> 1.7', '>= 1.7.1'
   spec.add_development_dependency 'byebug', '~> 9.1'
   spec.add_development_dependency 'faker', '~> 1.8', '>= 1.8.4'
+  spec.add_development_dependency 'rest-client', '~> 2.0', '>= 2.0.2'
 end

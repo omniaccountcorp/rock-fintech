@@ -1,5 +1,11 @@
 require "bundler/setup"
+require 'faker'
 require "rock_fintech"
+Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each { |file| require file }
+
+Faker::Config.locale = 'zh-CN'
+
+RockFintech.logger = Logger.new('tmp/test.log')
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
@@ -11,4 +17,6 @@ RSpec.configure do |config|
   config.expect_with :rspec do |c|
     c.syntax = :expect
   end
+
+  config.include ClientSupport
 end
