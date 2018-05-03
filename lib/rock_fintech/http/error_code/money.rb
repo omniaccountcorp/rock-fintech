@@ -20,6 +20,10 @@ module RockFintech
         @_coupon_recharge ||= []
       end
 
+      def self.coupon_withdraw
+        @_coupon_withdraw ||= []
+      end
+
     end # module ErrorCode
   end
 end
