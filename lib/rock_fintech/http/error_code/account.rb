@@ -27,7 +27,8 @@ module RockFintech
       def self.gateway_query
         @_gateway_query ||= %w[]
       end
-      
+
+
     end # module ErrorCode
   end
 end
