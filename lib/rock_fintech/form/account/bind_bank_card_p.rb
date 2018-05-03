@@ -36,7 +36,8 @@ module RockFintech
 
           res
         end
-      end
+
+      end # module
     end
   end
 end
