@@ -26,8 +26,8 @@ module RockFintech
         #       * :url [String] 页面跳转 url
         #
         def set_password_p(flow_id, customer_no, card_no,
-                          success_url, fail_url, callback_url,
-                          devise='000001', remark='')
+                           success_url, fail_url, callback_url,
+                           devise='000001', remark='')
           service = 'set_password_p'
 
           params = {
