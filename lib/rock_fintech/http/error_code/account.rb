@@ -21,6 +21,14 @@ module RockFintech
         @_account_balance ||= []
       end
 
+      def self.find_account_by_mobile
+        @_find_account_by_mobile ||= %w[T130016 T2600120]
+      end
+
+      def self.find_account_by_id
+        @_find_account_by_id ||= %w[RD000061 RD000089 RD000060 RD000063]
+      end
+
     end # module ErrorCode
   end
 end
