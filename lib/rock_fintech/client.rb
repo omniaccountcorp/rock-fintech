@@ -9,27 +9,24 @@ module RockFintech
     def initialize(options_arg)
       options = Utils.symbolize_keys(options_arg)
       @config = {
-        server_url: options[:server_url],
-        partner_id: options[:partner_id],
-        merchant_id: options[:merchant_id],
-        md5_key: options[:md5_key],
-        private_key: OpenSSL::PKey::RSA.new(options[:private_key], options[:private_key_pwd]),
-        public_key: OpenSSL::X509::Certificate.new(options[:public_key]).public_key,
+        uri: options[:url],
+        rft_token: options[:rft_token],
+        rft_org: options[:rft_org],
+        rft_key: options[:rft_key],
+        rft_secret: options[:rft_secret],
+        private_key: OpenSSL::PKey::RSA.new(options[:private_key]),
+        public_key: OpenSSL::PKey::RSA.new(options[:public_key]),
       }
 
       # 自动 include api 下的模块
       recursive_include_api('RockFintech::Api')
+
       # 自动 include form 下的模块
       recursive_include_api('RockFintech::Form')
     end
 
-    def platform_contract
-      # R+PARTNER
-      "R#{@config[:partner_id]}"
-    end
-
     def decode_notify_data(encryptkey, data)
-      ::RockFintech::Http::Decode.decode_notify_data(encryptkey, data, @config)
+      # ::RockFintech::Http::Decode.decode_notify_data(encryptkey, data, @config)
     end
 
     private

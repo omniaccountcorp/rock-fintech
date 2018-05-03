@@ -2,7 +2,7 @@
 
 require 'yaml'
 
-module ConstSupport
+module ClientSupport
   def client
     config = YAML.load_file(File.join(__dir__, 'config/config.yml'))
 

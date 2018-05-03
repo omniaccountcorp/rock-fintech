@@ -8,14 +8,14 @@ module RockFintech
       # @param request_type [Symbole] 操作类（:operate）/查询类(:query)
       # @param service [ String ] 上饶的服务
       # @param params [ Hash ] 参数
-      # @param post_path [ String ] post url
       # @param fail_codes [ Array ] 错误返回码
       # @param success_codes [ String ] 【业务】【明确的】正确返回码（而不是申请成功这类）
       #
       # @return [ Hash ] 结果集(见通用返回)
       #
-      def operate_post(request_type, service, params, post_path, fail_codes, success_codes, version)
-        response = Http.post(service, params, @config, post_path, version)
+      def operate_post(request_type, service, params, fail_codes, success_codes, version=Http::Request::VERSION)
+        request = Http::Request.new(params, @config, service, version)
+        response = request.post
 
         res = RockFintech::Utils.api_result(params, response)
 
@@ -42,6 +42,8 @@ module RockFintech
         if success_codes.include?(response.data[:code])
           res[:result] = 'S'
         end
+
+        RockFintech.logger.info "#{request.identifier} 最终返回的数据为：\n#{res}\n"
 
         res
       end

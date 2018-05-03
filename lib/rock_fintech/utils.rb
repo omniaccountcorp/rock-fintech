@@ -17,6 +17,19 @@ module RockFintech
       new_hash
     end
 
+    def self.get_uuid(time=Time.now.to_i)
+      machine_id = Digest::MD5.digest(::Mac.addr).unpack("N")[0]
+      process_id = Process.pid % 0xFFFF
+
+      @uuid_counter ||= 0
+      @uuid_counter += 1
+      count = (@uuid_counter) % 0xFFFFFF
+
+      uid = [ time, machine_id, process_id, count << 8 ].pack("N NX lXX NX").unpack("H*")[0].force_encoding('UTF-8')
+
+      return 'uuid' + uid
+    end
+
     # 通过时间，返回唯一一个24位flow id（支持分布）
     # 同一秒，同一台机器，同一个进程，最多可以产生 16777214 个不一样的订单号
     #
@@ -58,10 +71,5 @@ module RockFintech
         data: response.nil? ? nil : response.data,
       }
     end
-
-    # TODO: 生成唯一的 uuid
-    def self.uuid
-    end
-
   end
 end
