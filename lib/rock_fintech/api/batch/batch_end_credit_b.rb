@@ -23,13 +23,14 @@ module RockFintech
         #       * :batch_no [String] 批次号
         #       * :batch_count [String] 数量
         #       * :batch_date [String] 日期
-        #       * :result [String] 处理相应码('00': 成功, 其他为失败)
-        #       * :message [String] 应答描述
-        #       * :out_card_no [String] 扣款电子账号
-        #       * :in_card_no [String] 转入电子账号
-        #       * :assets_no [String] 标的编号
-        #       * :serial_no [String] 投标申请流水号
-        #       * :third_reserved [String] 第三方流水号
+        #       * :items [Array]
+        #         * :result [String] 处理相应码('00': 成功, 其他为失败)
+        #         * :message [String] 应答描述
+        #         * :out_card_no [String] 扣款电子账号
+        #         * :in_card_no [String] 转入电子账号
+        #         * :assets_no [String] 标的编号
+        #         * :serial_no [String] 投标申请流水号
+        #         * :third_reserved [String] 第三方流水号
         #
         def batch_end_credit_b(batch_count, batch_no, batch_type,
                               batch_date, items,
