@@ -36,7 +36,7 @@ module RockFintech
       end
 
       def http_success?
-        http_response && http_response.is_a?(Net::HTTPSuccess)
+        http_response && http_response.code.to_s == '200'
       end
 
       def http_fail?
