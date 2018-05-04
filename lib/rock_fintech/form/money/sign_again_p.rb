@@ -33,7 +33,7 @@ module RockFintech
 
         params = {
           card_no: card_no,
-          out_serial_no: flow_id,
+          out_serial_no: out_serial_no,
           origin_serial_no: origin_serial_no,
           interface_type: interface_type,
           amount: amount,
