@@ -2,21 +2,24 @@
 
 module RockFintech
   module Http
-      module ErrorCode
-        module Trade
-
-          def self.sign_auto_bid_p
-            @_sign_auto_bid ||= %w[]
-          end
-
-          def self.auto_bid_apply
-            @_sign_auto_bid ||= %w[]
-          end
-
-          def self.revoke_auto_bid
-            @_revoke_auto_bid ||= %w[]
-          end
+    module ErrorCode
+      module Trade
+        def self.sign_auto_bid_p
+          @_sign_auto_bid ||= %w[]
         end
-      end # module ErrorCode
-  end
-end
+
+        def self.auto_bid_apply
+          @_sign_auto_bid ||= %w[]
+        end
+
+        def self.revoke_auto_bid
+          @_revoke_auto_bid ||= %w[]
+        end
+          
+        def bid_apply_p
+          @_bid_apply_p ||= []
+        end
+      end # module trade
+    end # module ErrorCode
+  end # module http
+end # module rockfintech
