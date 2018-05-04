@@ -2,12 +2,12 @@
 module RockFintech
   module Form
     module Account
-      module CreateAccountP
-        # 开户
+      module SetPasswordP
+        # 重置密码
         #
         # @param flow_id [ String ] 申请流水号
-        # @param account_type [ String ] 账户类型 普通户200201,企业户200204
-        # @param role_type [ String ] 用户角色 1：出借角色，2：借款角色，3：代偿角色
+        # @param customer_no [ String ] 客户号
+        # @param card_no [ String ] 电子账户
         # @param success_url [ String ] 成功 url
         # @param fail_url [ String ] 失败 url
         # @param callback_url [String] 回调 url
@@ -25,15 +25,15 @@ module RockFintech
         #       * :order_id [String] 订单号
         #       * :url [String] 页面跳转 url
         #
-        def create_account_p(flow_id, account_type, role_type,
-                            success_url, fail_url, callback_url,
-                            devise='000001', remark='')
-          service = 'create_account_p'
+        def set_password_p(flow_id, customer_no, card_no,
+                           success_url, fail_url, callback_url,
+                           devise='000001', remark='')
+          service = 'set_password_p'
 
           params = {
             out_serial_no: flow_id,
-            account_type: account_type,
-            role_type: role_type,
+            customer_no: customer_no,
+            card_no: card_no,
             success_url: success_url,
             fail_url: fail_url,
             callback_url: callback_url,
@@ -41,7 +41,7 @@ module RockFintech
             custom: remark,
           }
 
-          res = operate_post(:operate, service, params, Http::ErrorCode.create_account_p, ['RD000000'])
+          res = operate_post(:operate, service, params, Http::ErrorCode.set_password_p, ['RD000000'])
 
           res
         end
