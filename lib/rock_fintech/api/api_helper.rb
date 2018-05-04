@@ -35,9 +35,6 @@ module RockFintech
           return res
         end
 
-        # 其余 api 错误不知道
-        return res unless response.data[:code].nil?
-
         # 确定的成功返回码
         if success_codes.include?(response.data[:code])
           res[:result] = 'S'
