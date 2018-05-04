@@ -28,7 +28,7 @@ module RockFintech
         #       * :order_id	[String] 订单号
         #       * :url [String] 页面跳转 url
 
-        def trustee_pay_p(card_no, devise="000001", remark='')
+        def trustee_pay_p(out_serial_no, card_no, asset_no, cert_type, cert_no, in_card_no, third_custom, success_url, fail_url, callback_url, devise="000001", remark='')
           service = "trustee_pay_p"
 
           params = {
