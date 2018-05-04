@@ -33,7 +33,7 @@ module RockFintech
             custom: remark,
           }
 
-          res = operate_post(:operate, service, params, Http::ErrorCode::Trade.revoke_auto_bid, ['RD000000'])
+          res = operate_post(:operate, service, params, Http::ErrorCode.revoke_auto_bid, ['RD000000'])
 
           res
         end

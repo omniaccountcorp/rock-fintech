@@ -37,7 +37,7 @@ module RockFintech
             custom: remark,
           }
 
-          res = operate_post(:query, service, params, Http::ErrorCode::Asset.asset_query, ['RD000000'])
+          res = operate_post(:query, service, params, Http::ErrorCode.asset_query, ['RD000000'])
 
           res
         end

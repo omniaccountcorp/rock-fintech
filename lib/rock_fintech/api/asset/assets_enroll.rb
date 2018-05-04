@@ -51,7 +51,7 @@ module RockFintech
             custom: remark,
           }
 
-          res = operate_post(:operate, service, params, Http::ErrorCode::Asset.assets_enroll, ['RD000000'])
+          res = operate_post(:operate, service, params, Http::ErrorCode.assets_enroll, ['RD000000'])
 
           res
         end
