@@ -3,11 +3,11 @@ module RockFintech
   module Form
     module Trade
       module BidApplyP
-        # 绑卡网关接口
+        # 投资人投标申请
         #
-        # @param interest_date [ Time ] 起息日 YYYYMMDD
-        # @param end_date [ Time ] 产品到期日 YYYYMMDD
-        # @param transact_date [ Time ] 交易时间 YYYYMMDD
+        # @param interest_date [ Time ] 起息日
+        # @param end_date [ Time ] 产品到期日
+        # @param transact_date [ Time ] 交易时间
         #
         # @return [ Hash ] 结果集
         #   * :result [String] "S"/"F"/"P"
@@ -37,7 +37,7 @@ module RockFintech
             frozen_flag: frozen_flag,
             use_bonus: use_bonus,
             bonus_amount: bonus_amount,
-            transact_date: transact_date.strftime('%Y%m%d'),
+            transact_date: '' == transact_date ? '' : transact_date.strftime('%Y%m%d'),
             third_custom: third_custom,
             success_url: success_url,
             fail_url: fail_url,

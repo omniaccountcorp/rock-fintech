@@ -5,6 +5,11 @@ module RockFintech
       module SignBorrowerP
         # 借款人放款手续费和还款手续费签约
         #
+        # @param payment_start_time [ Time ] 放款手续费签约开始时间
+        # @param repayment_start_time [ Time ] 还款签约开始时间
+        # @param payment_end_time [ Time ] 放款手续费签约结束时间
+        # @param repayment_end_time [ Time ] 还款签约结束时间
+        #
         # @return [ Hash ] 结果集
         #   * :result [String] "S"/"F"/"P"
         #   * :request_params [Hash] 请求参数
@@ -27,10 +32,10 @@ module RockFintech
             payment_amount: payment_amount,
             repayment_amount: repayment_amount,
             out_serial_no: out_serial_no,
-            payment_start_time: payment_start_time,
-            repayment_start_time: repayment_start_time,
-            payment_end_time: payment_end_time,
-            repayment_end_time: repayment_end_time,
+            payment_start_time: payment_start_time.to_i,
+            repayment_start_time: repayment_start_time.to_i,
+            payment_end_time: payment_end_time.to_i,
+            repayment_end_time: repayment_end_time.to_i,
             callback_url: callback_url,
             success_url: success_url,
             fail_url: fail_url,
