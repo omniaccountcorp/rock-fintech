@@ -8,7 +8,7 @@ RSpec.describe '个人户按证件号查询电子账号' do
   it '查询成功' do
     res = client.find_account_by_id(cert_type, cert_no)
 
-    puts res[:data]
+    puts res[:data] #card_no: "86666882002000446801"
     expect(res[:code]).to eq('RD000000')
   end
 end
