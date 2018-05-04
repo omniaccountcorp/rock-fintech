@@ -11,7 +11,10 @@ module RockFintech
       def self.auto_bid_apply
         @_auto_bid_apply  ||= %w[]
       end
-      
+
+      def self.debt_query
+        @_debt_query ||= %w[]
+      end
     end # module ErrorCode
   end
 end

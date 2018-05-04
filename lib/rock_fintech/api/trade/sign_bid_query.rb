@@ -1,7 +1,7 @@
 # coding: utf-8
 module RockFintech
   module Api
-    module Account
+    module Trade
       module SignBidQuery
         # 查询投资人自动投标签约状态
         #

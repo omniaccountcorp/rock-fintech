@@ -1,7 +1,7 @@
 # coding: utf-8
 module RockFintech
   module Api
-    module Account
+    module Trade 
       module AutoBidApply
         # P2P平台自动为投资人投标
         #
