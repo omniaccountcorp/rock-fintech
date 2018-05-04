@@ -15,6 +15,10 @@ module RockFintech
       def self.debt_query
         @_debt_query ||= %w[]
       end
+
+      def self.buy_credit_p
+        @_buy_credit_p ||= %w[]
+      end
     end # module ErrorCode
   end
 end
