@@ -36,7 +36,7 @@ module RockFintech
         #       * :state	[Integer] 状态，1：投标中；2：计息中；3：到期待返还；4：本息已返还，1
         #       * :bonus_amount	[Decimal] 抵扣红包，9
         #
-        def account_credits(card_no, asset_no="", state=0, page_flag, buy_date, out_serial_no, asset_page, devise="000001", remark='')
+        def account_credits(card_no, asset_no, state, page_flag, buy_date, out_serial_no, asset_page, devise="000001", remark='')
           service = "account_credits"
 
           params = {

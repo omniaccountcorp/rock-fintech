@@ -43,7 +43,7 @@ module RockFintech
         #       * :end_flag	[Integer] 结束标识位，1：结束；0：未结束
         #       * :total_result	[Integer] 查询记录条数，同请求
         #
-        def account_transaction_query(card_no, record_flag, transact_type, begin_date, end_date, type, order_by=1, current_result, total_result, devise="000001", remark='')
+        def account_transaction_query(card_no, record_flag, transact_type, begin_date, end_date, type, order_by, current_result, total_result, devise="000001", remark='')
           service = "account_transaction_query"
 
           params = {
@@ -57,14 +57,14 @@ module RockFintech
             current_result: current_result,
             total_result: total_result,
             client: devise,
-            custom: remark,Time
+            custom: remark,
           }
 
           res = operate_post(:operate, service, params, Http::ErrorCode.account_transaction_query, ["RD000000"] )
 
           res
         end
-      end AccountTransactionQuery
+      end #AccountTransactionQuery
     end
   end
 end

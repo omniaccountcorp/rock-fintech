@@ -36,7 +36,7 @@ module RockFintech
           params = {
             order_id: order_id,
             client: devise,
-            custom: remark,Time
+            custom: remark,
           }
 
           res = operate_post(:operate, service, params, Http::ErrorCode.create_account_sr_query, ["RD000000"] )
