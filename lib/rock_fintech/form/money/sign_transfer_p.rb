@@ -5,6 +5,9 @@ module RockFintech
       module SignTransferP
         # 转让方转让手续费签约
         #
+        # @param start_time [ Time ] 开始时间
+        # @param end_time [ Time ] 结束时间
+        #
         # @return [ Hash ] 结果集
         #   * :result [String] "S"/"F"/"P"
         #   * :request_params [Hash] 请求参数
@@ -25,8 +28,8 @@ module RockFintech
             card_no: card_no,
             out_serial_no: out_serial_no,
             amount: amount,
-            start_time: start_time,
-            end_time: end_time,
+            start_time: start_time.to_i,
+            end_time: end_time.to_i,
             callback_url: callback_url,
             success_url: success_url,
             fail_url: fail_url,
