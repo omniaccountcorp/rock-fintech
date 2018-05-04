@@ -5,7 +5,7 @@ Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each { |file| require file }
 
 Faker::Config.locale = 'zh-CN'
 
-RockFintech.logger = Logger.new('tmp/test.log')
+# RockFintech.logger = Logger.new('tmp/test.log')
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
