@@ -35,7 +35,6 @@ module RockFintech
         #
         def batch_new_query_payment_b(batch_no, devise='000001', remark='')
 
-
           service = 'batch_new_query_payment_b'
 
           params = {
