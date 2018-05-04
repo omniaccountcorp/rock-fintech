@@ -23,6 +23,22 @@ module RockFintech
       def trustee_pay_p
         @_trustee_pay_p ||= %w[]
       end
+
+      def self.sign_auto_bid_p
+        @_sign_auto_bid ||= %w[]
+      end
+
+      def self.auto_bid_apply
+        @_auto_bid_apply ||= %w[]
+      end
+
+      def self.revoke_auto_bid
+        @_revoke_auto_bid ||= %w[]
+      end
+
+      def self.bid_apply_p
+        @_bid_apply_p ||= []
+      end
     end # module ErrorCode
-  end
-end
+  end # module http
+end # module rockfintech

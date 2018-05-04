@@ -1,7 +1,7 @@
 # coding: utf-8
 module RockFintech
   module Api
-    module Trade 
+    module Trade
       module AutoBidApply
         # P2P平台自动为投资人投标
         #
@@ -50,10 +50,10 @@ module RockFintech
             bonus_amount: bonus_amount,
             auth_code: auth_code,
             asset_no: asset_no,
-            interest_date: interest_date.strftime("%Y%m%d"),
+            interest_date: interest_date,
             interest_type: interest_type,
             interest_day: interest_day,
-            end_date: end_date.strftime("%Y%m%d"),
+            end_date: end_date,
             interest_rate: interest_rate,
             frozen_flag: frozen_flag,
             frozen_no: frozen_no,
