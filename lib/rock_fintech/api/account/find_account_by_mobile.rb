@@ -2,8 +2,8 @@
 module RockFintech
   module Api
     module Account
-      module AccountBalance
-        # 电子账户余额查询
+      module FindAccountByMobile
+        # 按手机号查询电子账号信息
         #
         # @return [ Hash ] 结果集
         #   * :result [String] "S"/"F"/"P"
@@ -12,24 +12,25 @@ module RockFintech
         #   * :code [String] 结果代码
         #   * :msg [String] 结果信息
         #   * :data: 具体业务返回信息
+        #       * :mobile [String] 手机号
+        #       * :product [String] 产品号
         #       * :card_no [String] 电子账号
+        #       * :customer_no [String] 客户号
+        #       * :issue_date [String] 开户日期
         #       * :name [String] 持卡人姓名
-        #       * :balance [String] 账户可用余额
-        #       * :freBi [String] 账户冻结余额
-        #       * :third_custom [String] 第三方保留域
+        #       * :cert_type [String] 证件类型，15-身份证18位
+        #       * :cert_no [String] 证件号码
         #
-        def account_balance(card_no, customer_no, third_custom='', devise='000001', remark='')
-          service = 'account_balance'
+        def find_account_by_mobile(mobile, devise='000001', remark='')
+          service = 'find_account_by_mobile'
 
           params = {
-            customer_no: customer_no,
-            card_no: card_no,
-            third_custom: third_custom,
+            mobile: mobile,
             client: devise,
             custom: remark,
           }
 
-          res = operate_post(:query, service, params, Http::ErrorCode.account_balance, ['RD000000'])
+          res = operate_post(:query, service, params, Http::ErrorCode.find_account_by_mobile, ['RD000000'])
 
           res
         end
