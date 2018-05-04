@@ -10,5 +10,4 @@ RSpec.describe '网关自定义下单查询（查询内容：投标，签约，�
       expect(result[:data][:service]).to eq "gateway_query"
     end
   end
-
 end
