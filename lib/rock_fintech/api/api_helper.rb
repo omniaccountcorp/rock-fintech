@@ -42,12 +42,6 @@ module RockFintech
           return res
         end
 
-        # 其余 api 错误不知道
-        unless response.data[:code].nil?
-          RockFintech.logger.info "#{request.identifier} 最终返回的数据为：\n#{res}\n"
-          return res
-        end
-
         # 确定的成功返回码
         if success_codes.include?(response.data[:code])
           res[:result] = 'S'
