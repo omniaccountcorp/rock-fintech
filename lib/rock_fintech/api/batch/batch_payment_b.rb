@@ -65,7 +65,7 @@ module RockFintech
             custom: remark,
           }
 
-          res = operate_post(:operate, service, params, Http::ErrorCode::Batch.batch_payment_b, ['RD000000'])
+          res = operate_post(:operate, service, params, Http::ErrorCode.batch_payment_b, ['RD000000'])
 
           res
         end

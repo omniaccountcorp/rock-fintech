@@ -48,7 +48,7 @@ module RockFintech
             custom: remark,
           }
 
-          res = operate_post(:operate, service, params, Http::ErrorCode::Batch.batch_end_credit_b, ['RD000000'])
+          res = operate_post(:operate, service, params, Http::ErrorCode.batch_end_credit_b, ['RD000000'])
 
           res
         end
