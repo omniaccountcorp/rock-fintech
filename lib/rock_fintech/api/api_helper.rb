@@ -21,10 +21,16 @@ module RockFintech
 
         if :operate == request_type
           # 向服务器发送操作，超时类的都应该当 pending 处理
-          return res if response.http_pending?
+          if response.http_pending?
+            RockFintech.logger.info "#{request.identifier} 最终返回的数据为：\n#{res}\n"
+            return res
+          end
         elsif :query == request_type
           # 查询类 api，http 没成功都返回 pending
-          return res unless response.http_success?
+          unless response.http_success?
+            RockFintech.logger.info "#{request.identifier} 最终返回的数据为：\n#{res}\n"
+            return res
+          end
         else
           raise '未知的请求类型，请选择设置：操作类（:operate）/查询类(:query)'
         end
@@ -32,6 +38,13 @@ module RockFintech
         # 确定的错误
         if fail_codes.include?(response.data[:code])
           res[:result] = 'F'
+          RockFintech.logger.info "#{request.identifier} 最终返回的数据为：\n#{res}\n"
+          return res
+        end
+
+        # 其余 api 错误不知道
+        unless response.data[:code].nil?
+          RockFintech.logger.info "#{request.identifier} 最终返回的数据为：\n#{res}\n"
           return res
         end
 
