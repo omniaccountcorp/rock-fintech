@@ -18,7 +18,7 @@ module RockFintech
         response = request.post
 
         res = RockFintech::Utils.api_result(params, response)
-
+        
         if :operate == request_type
           # 向服务器发送操作，超时类的都应该当 pending 处理
           if response.http_pending?
