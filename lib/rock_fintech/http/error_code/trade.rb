@@ -19,6 +19,10 @@ module RockFintech
       def self.buy_credit_p
         @_buy_credit_p ||= %w[]
       end
+
+      def trustee_pay_p
+        @_trustee_pay_p ||= %w[]
+      end
     end # module ErrorCode
   end
 end
