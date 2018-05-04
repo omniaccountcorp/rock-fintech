@@ -5,7 +5,7 @@ module RockFintech
 
       def self.encrypt(content, public_key)
         content_str = ''
-        content.scan(/.{1,100}/).each{ |str|
+        content.scan(/.{1,245}/).each{ |str|
           content_str += public_key.public_encrypt(str)
         }
         Base64.strict_encode64(content_str)
