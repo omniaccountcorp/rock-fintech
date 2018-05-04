@@ -11,13 +11,12 @@ RSpec.describe '' do
   let(:redirect_url) { 'http://test.omniaccount.com' }
   let(:bank_name) { '工商银行' }
   let(:bank_id_no) { 'BOC' }
-  let(:amount) { 100.00 }
+  let(:amount) { 100 }
 
   it '获取页面 url' do
-    res = client.bank_recharge(card_no, bank_type, callback_url, customer_no, flow_id, redirect_url,
+    res = client.bank_recharge(card_no, bank_type, callback_url, customer_no, redirect_url,
                                '', '', flow_id, bank_name, bank_id_no, amount)
 
-    puts res
     expect(res[:code]).to eq('RD000000')
   end
 end
