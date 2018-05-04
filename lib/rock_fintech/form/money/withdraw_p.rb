@@ -20,7 +20,7 @@ module RockFintech
                        mobile, amount, fee, callback_url, channel_flag, channel_code, union_bank_code,
                        open_bank_code, bank_name_en, bank_name_cn, bank_province, bank_city,
                        success_url, fail_url, devise='000001', remark='')
-          service = 'recharge_p'
+          service = 'withdraw_p'
 
           params = {
             order_no: order_no,

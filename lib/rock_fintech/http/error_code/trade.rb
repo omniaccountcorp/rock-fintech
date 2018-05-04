@@ -37,7 +37,7 @@ module RockFintech
       end
 
       def self.bid_apply_p
-        @_bid_apply_p ||= []
+        @_bid_apply_p ||= ['RD001025']
       end
     end # module ErrorCode
   end # module http
