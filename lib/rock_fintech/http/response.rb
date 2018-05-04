@@ -36,7 +36,7 @@ module RockFintech
       end
 
       def http_success?
-        http_response && http_response.code.to_s == '200'
+        http_response && /^2/ =~ http_response.code.to_s
       end
 
       def http_fail?
