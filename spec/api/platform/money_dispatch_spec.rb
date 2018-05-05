@@ -7,7 +7,7 @@ RSpec.describe 'P2P产品红包发放' do
 
   it '发放成功' do
     result = client.money_dispatch(card_no, card_no_in, 3, 2000, 0, '')
-    ap result
+    # ap result
     aggregate_failures do
       expect(result[:code]).to_not eq nil
       expect(result[:data][:msg]).to eq "红包户不存在"
