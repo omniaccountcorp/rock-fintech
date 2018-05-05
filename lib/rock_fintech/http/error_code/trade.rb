@@ -39,6 +39,10 @@ module RockFintech
       def self.bid_apply_p
         @_bid_apply_p ||= ['RD001025']
       end
+
+      def self.authorization_p
+        @_authorization_p ||= []
+      end
     end # module ErrorCode
   end # module http
 end # module rockfintech
