@@ -5,7 +5,7 @@ module RockFintech
       module BatchRepaymentB
 
         # 批量还款
-        # @param items [ Array ] 还款信息
+        # @param items [ Array ] 还款信息 (此参数传入时必须用 to_json 转化)
         #          * :out_card_no
         #          * :amount
         #          * :interest_amount
