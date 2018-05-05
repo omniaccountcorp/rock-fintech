@@ -15,7 +15,7 @@ RSpec.describe '营销户信息' do
 
   it "服务费账户成功查询" do
     result = client.marketing_query(card_no_service_fee, 1)
-    ap result
+    # ap result
     aggregate_failures do
       expect(result[:code]).to eq "RD000000"
       expect(result[:data][:name]).to_not eq nil
