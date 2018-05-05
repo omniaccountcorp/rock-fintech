@@ -6,14 +6,6 @@ module RockFintech
 
         #  批次还款查询
         #
-        # @param items [ Array ] 还款信息(此参数传入时必须用 to_json 转化)
-        #          * :out_card_no
-        #          * :in_card_no
-        #          * :assets_no
-        #          * :auth_code
-        #          * :third_reserved
-        #          * :serial_no
-        #
         # @return [ Hash ] 结果集
         #   * :result [String] "S"/"F"/"P"
         #   * :request_params [Hash] 请求参数
