@@ -51,15 +51,27 @@ module RockFintech
         RockFintech.logger.info "#{identifier} 返回的数据为：\n#{res}\n"
 
         @response = RockFintech::Http::Response.new(service: @service,
-                                                    flow_id: @params[:out_serial_no],
+                                                    flow_id: flow_id,
                                                     http_response: http_response,
                                                     raw_body: http_response.body,
                                                     data: res,
                                                     data_valid: verify_sign(res))
       end
 
+      def flow_id
+        if @params[:out_serial_no]
+          @params[:out_serial_no]
+        elsif @params[:serial_no]
+          @param[serial_no]
+        elsif @params[:order_no]
+          @params[:order_no]
+        else
+          nil
+        end
+      end
+
       def identifier
-        "[#{@service} - #{@params[:out_serial_no]}] "
+        "[#{@service} - #{flow_id}] "
       end
 
       private
