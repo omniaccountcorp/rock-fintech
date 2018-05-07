@@ -11,7 +11,7 @@ module RockFintech
         self.data_valid = true
 
         params.each do |key, value|
-          instance_variable_set("@#{key}", value)
+          self.instance_variable_set("@#{key}", value)
         end
 
         self.data = {} if self.data.nil? # 默认一定要有
@@ -20,6 +20,7 @@ module RockFintech
           self.data[:code] = 'sign_valid_fail'
           self.data[:msg] = '数据签名错误'
         end
+
       end
 
       def [] key

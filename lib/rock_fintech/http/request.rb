@@ -63,15 +63,7 @@ module RockFintech
       end
 
       def flow_id
-        if @params[:out_serial_no]
-          @params[:out_serial_no]
-        elsif @params[:serial_no]
-          @params[:serial_no]
-        elsif @params[:order_no]
-          @params[:order_no]
-        else
-          nil
-        end
+        @params[:out_serial_no] || @params[:serial_no] || @params[:order_no] || @params[:batch_no]
       end
 
       def identifier
