@@ -17,8 +17,8 @@ module RockFintech
         self.data = {} if self.data.nil? # 默认一定要有
 
         unless self.data_valid
-          self.data[:errorCode] = 'sign_valid_fail'
-          self.data[:errorMsg] = '数据签名错误'
+          self.data[:code] = 'sign_valid_fail'
+          self.data[:msg] = '数据签名错误'
         end
       end
 
