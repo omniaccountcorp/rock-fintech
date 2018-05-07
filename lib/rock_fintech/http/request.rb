@@ -29,7 +29,7 @@ module RockFintech
           encode: ENCODE,
           version: @version,
         }.merge(@params)
-        sign_str = sign(sign_body)
+        sign_str = Sign.sign(sign_body, @config)
 
         # 3. merge sign
         post_body = sign_body.merge({sign: sign_str})
@@ -47,15 +47,19 @@ module RockFintech
         http_response = RestClient.post(@uri, request_data, header)
         RockFintech.logger.info "#{identifier} 返回的报文为：\n#{http_response.body.force_encoding('utf-8')}\n"
 
-        res = decode_body(http_response.body)
+        # 6. decode http response
+        result_str = Encrypt::RSA.decrypt(http_response.body, @config[:private_key])
+        res = Utils.symbolize_keys(JSON.parse(result_str))
+
         RockFintech.logger.info "#{identifier} 返回的数据为：\n#{res}\n"
 
+        # 7. create response
         @response = RockFintech::Http::Response.new(service: @service,
                                                     flow_id: flow_id,
                                                     http_response: http_response,
                                                     raw_body: http_response.body,
                                                     data: res,
-                                                    data_valid: verify_sign(res))
+                                                    data_valid: Sign.verify(res, @config))
       end
 
       def flow_id
@@ -74,42 +78,6 @@ module RockFintech
         "[#{@service} - #{flow_id}] "
       end
 
-      private
-
-      def sign(data)
-        serialize_str = serialize(data)
-        Sign::MD5.sign(serialize_str, Sign::MD5.sign(@config[:rft_key], @config[:rft_secret]))
-      end
-
-      def serialize(data)
-        data = Hash[data.sort] # key 按照 alphabet 排序
-
-        data.each{ |k, v|
-          if v.kind_of?(Hash)
-            data[k] = serialize(v)
-          elsif v.kind_of?(Array)
-            if v[0].kind_of?(Hash)
-              v.each_with_index{ |ele, index|
-                v[index] = sign(ele)
-              }
-            else
-              data[k] = v.join('&')
-            end
-          end
-        }
-
-        data.map{|k,v| "#{k}=#{v}"}.join('&')
-      end
-
-      def decode_body(body)
-        result_str = Encrypt::RSA.decrypt(body, @config[:private_key])
-        Utils.symbolize_keys(JSON.parse(result_str))
-      end
-
-      def verify_sign(body)
-        sign_str = body.delete(:sign)
-        sign(body) == sign_str
-      end
     end # end of class
   end
 end
