@@ -14,8 +14,7 @@ RSpec.describe '批量结束债权' do
       }
     ]
 
-    res = client.batch_end_credit_b("1", 'test', "test", "2018-4-22", items,
-                                    '000001', '备注')
+    res = client.batch_end_credit_b("1", 'test', "test", "2018-4-22", items, '备注')
 
     expect(res[:code]).not_to eq('RD000000')
   end
