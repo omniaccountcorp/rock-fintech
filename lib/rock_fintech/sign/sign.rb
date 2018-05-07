@@ -23,14 +23,17 @@ module RockFintech
         elsif v.kind_of?(Array)
           if v[0].kind_of?(Hash) # 如果是 hash 数组对元素接着 serialize
             v.each_with_index{ |ele, index|
-              v[index] = ele.to_json #serialize(ele)
+              ele.delete('sign')
+              ele.delete(:sign)
+              ele = Hash[ele.sort]
+              v[index] = ele.map{|k,v| "#{k}=#{v}"}.join('&')
             }
+            data[k] = v.join('&')
           else                   # 如果是普通元素数组
             data[k] = v.join('&')
           end
         end
       }
-
       data.map{|k,v| "#{k}=#{v}"}.join('&')
     end # serialize
 
