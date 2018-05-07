@@ -53,8 +53,8 @@ module RockFintech
         #         * :third_reserved [String] 第三方流水号
         #         * :reserved [String] 保留域
         #
-        def batch_repayment_b(batch_count, batch_no, batch_type, notify_url,
-                              batch_date, items, remark='')
+        def batch_repayment_b(batch_count, batch_no, batch_type,
+                              batch_date, notify_url, items, remark='')
 
 
           service = 'batch_payment_b'
