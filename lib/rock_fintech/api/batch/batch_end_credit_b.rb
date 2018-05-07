@@ -33,8 +33,8 @@ module RockFintech
         #         * :third_reserved [String] 第三方流水号
         #
         def batch_end_credit_b(batch_count, batch_no, batch_type,
-                              batch_date, items,
-                              devise='000001', remark='')
+                              batch_date, items, remark='')
+
 
           service = 'batch_end_credit_b'
 
@@ -44,7 +44,6 @@ module RockFintech
             batch_type: batch_type,
             batch_date: batch_date,
             items: items,
-            client: devise,
             custom: remark,
           }
 
