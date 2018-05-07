@@ -57,7 +57,7 @@ module RockFintech
                               batch_date, notify_url, items, remark='')
 
 
-          service = 'batch_payment_b'
+          service = 'batch_repayment_b'
 
           params = {
             batch_count: batch_count,
