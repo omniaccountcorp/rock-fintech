@@ -26,6 +26,6 @@ RSpec.describe '批量还款' do
     notify_url = "test.omniaccount.com"
     res = client.batch_repayment_b("1", 'test', "test", "2018-4-22", notify_url, items, '备注')
 
-    expect(res[:code]).not_to eq('RD000000')
+    expect(res[:code]).to eq('RD000000')
   end
 end
