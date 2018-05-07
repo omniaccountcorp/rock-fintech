@@ -5,6 +5,8 @@ module RockFintech
       module BatchPaymentB
 
         # 批量放款
+        #
+        # @param notify_url 回调地址
         # @param items [ Array ] 放款信息(此参数传入时必须用 to_json 转化)
         #          * :out_card_no
         #          * :amount
@@ -50,7 +52,7 @@ module RockFintech
         #         * :third_reserved [String] 第三方流水号
         #
         def batch_payment_b(batch_count, batch_no, batch_type,
-                            batch_date, items, remark='')
+                            batch_date, notify_url, items, remark='')
 
 
           service = 'batch_payment_b'
@@ -60,6 +62,7 @@ module RockFintech
             batch_no: batch_no,
             batch_type: batch_type,
             batch_date: batch_date,
+            notify_url: notify_url,
             items: items,
             custom: remark,
           }
