@@ -66,7 +66,7 @@ module RockFintech
         if @params[:out_serial_no]
           @params[:out_serial_no]
         elsif @params[:serial_no]
-          @param[serial_no]
+          @params[:serial_no]
         elsif @params[:order_no]
           @params[:order_no]
         else
