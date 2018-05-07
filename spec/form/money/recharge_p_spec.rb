@@ -10,7 +10,7 @@ RSpec.describe '充值' do
   let(:fail_url) { 'http://test.omniaccount.com' }
   let(:bank_name) { '工商银行' }
   let(:bank_id_no) { 'BOC' }
-  let(:amount) { 100 }
+  let(:amount) { 1000 }
   let(:bind_card) { '6212262201023557228' }
   let(:currency) { '156' }
   let(:fee) { 1 }
