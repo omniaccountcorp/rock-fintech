@@ -60,7 +60,7 @@ module RockFintech
             custom: remark,
           }
 
-          res = operate_post(:operate, service, params, Http::ErrorCode.account_transaction_query, ["RD000000"] )
+          res = operate_post(:query, service, params, Http::ErrorCode.account_transaction_query, ["RD000000"] )
 
           res
         end
