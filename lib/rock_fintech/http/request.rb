@@ -29,6 +29,7 @@ module RockFintech
           encode: ENCODE,
           version: @version,
         }.merge(@params)
+
         sign_str = Sign.sign(sign_body, @config)
 
         # 3. merge sign

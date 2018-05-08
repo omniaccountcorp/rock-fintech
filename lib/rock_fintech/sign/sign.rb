@@ -14,7 +14,8 @@ module RockFintech
 
     private
 
-    def self.serialize(data)
+    def self.serialize(data_in)
+      data = Marshal.load( Marshal.dump(data_in) ) # deep clone, not affect original data
       data = Hash[data.sort]     # key 按照 alphabet 排序
 
       data.each{ |k, v|
