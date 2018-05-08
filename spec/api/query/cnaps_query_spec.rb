@@ -7,7 +7,7 @@ RSpec.describe '联行号查询' do
       "招商",
       "杭州滨江"
     ]
-    res = client.cnaps_query(keywords, '000001', '备注')
+    res = client.cnaps_query(keywords, '000002', '备注')
 
     expect(res[:code]).to eq('RD000000')
   end
