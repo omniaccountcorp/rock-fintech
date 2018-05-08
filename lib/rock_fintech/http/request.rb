@@ -17,7 +17,7 @@ module RockFintech
       end
 
       def post
-        RockFintech.logger.info "#{identifier} 请求内容为：\n#{@params}\n"
+        RockFintech.logger.info "#{identifier} 请求内容为：\n#{@params.to_json}\n"
         # 1. api params
 
         # 2. sign
@@ -29,6 +29,7 @@ module RockFintech
           encode: ENCODE,
           version: @version,
         }.merge(@params)
+
         sign_str = Sign.sign(sign_body, @config)
 
         # 3. merge sign
@@ -63,15 +64,7 @@ module RockFintech
       end
 
       def flow_id
-        if @params[:out_serial_no]
-          @params[:out_serial_no]
-        elsif @params[:serial_no]
-          @params[:serial_no]
-        elsif @params[:order_no]
-          @params[:order_no]
-        else
-          nil
-        end
+        @params[:out_serial_no] || @params[:serial_no] || @params[:order_no] || @params[:batch_no]
       end
 
       def identifier

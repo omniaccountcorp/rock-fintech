@@ -14,11 +14,12 @@ module RockFintech
       # @return [ Hash ] 结果集(见通用返回)
       #
       def operate_post(request_type, service, params, fail_codes, success_codes, version=Http::Request::VERSION)
+        fail_codes << 400
         request = Http::Request.new(params, @config, service, version)
         response = request.post
 
         res = RockFintech::Utils.api_result(params, response)
-        
+
         if :operate == request_type
           # 向服务器发送操作，超时类的都应该当 pending 处理
           if response.http_pending?
