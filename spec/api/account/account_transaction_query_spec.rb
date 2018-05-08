@@ -10,7 +10,7 @@ RSpec.describe '账户业务流水查询' do
 
   it '成功查询' do
     result = client.account_transaction_query(card_no, "", "", begin_date, end_date, "", "", current_result, total_result)
-    ap result
+    # ap result
     aggregate_failures do
       expect(result[:msg]).to  eq "交易成功"
       expect(result[:data][:code]).to eq "RD000000"
