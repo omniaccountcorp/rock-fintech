@@ -12,7 +12,7 @@ RSpec.describe '批次放款查询' do
         third_reserved: "",
         serial_no: "123"
       }
-    ].to_json
+    ]
 
     res = client.batch_query_payment_b("dazhanghu", 1, "1",
                                        "2018-4-22", items,

@@ -6,8 +6,8 @@ RSpec.describe '投资人购买债权' do
   let(:out_serial_no) { RockFintech::Utils.gen_flow_id }
   let(:origin_serial_no) { "5aec67313c32864ce6000001" }
   let(:card_no_out) { "86666882002000446801" }
-  let(:total_balance) { 100.00 }
-  let(:amount) { 30.00 }
+  let(:total_balance) { '100' }
+  let(:amount) { '30.00' }
   let(:transfer_price) { 4 }
   let(:mobile) { "15922510001" }
 
@@ -16,6 +16,7 @@ RSpec.describe '投资人购买债权' do
 
     # ap result
     aggregate_failures do
+      expect(result[:result]).not_to eq 'F'
       expect(result[:flow_id]).to_not eq nil
       expect(result[:data][:uuid]).to_not eq nil
     end

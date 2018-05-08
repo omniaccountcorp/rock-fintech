@@ -14,6 +14,7 @@ module RockFintech
       # @return [ Hash ] 结果集(见通用返回)
       #
       def operate_post(request_type, service, params, fail_codes, success_codes, version=Http::Request::VERSION)
+        fail_codes << 400
         request = Http::Request.new(params, @config, service, version)
         response = request.post
 
