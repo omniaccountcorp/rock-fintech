@@ -8,7 +8,7 @@ RSpec.describe '签约累加' do
   let(:interface_type) { 'bid' }
 
   it "成功签约" do
-    result = client.sign_again_p(card_no, out_serial_no, origin_serial_no, interface_type, 2000, "20180503", "20180504", 'http://test.omniaccount.com',  'http://test.omniaccount.com', 'http://test.omniaccount.com')
+    result = client.sign_again_p(card_no, out_serial_no, origin_serial_no, interface_type, 1000, 2000, "20180503", "20180504", 'http://test.omniaccount.com',  'http://test.omniaccount.com', 'http://test.omniaccount.com')
 
     # ap result
     aggregate_failures do

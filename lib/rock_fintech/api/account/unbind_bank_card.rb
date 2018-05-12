@@ -21,12 +21,12 @@ module RockFintech
         #       * :revoke_sign_date [String] 签约取消日期
         #       * :revoke_sign_time [String] 签约取消时间
         #
-        def unbind_bank_card(card_no, bank_card_no, customer_no, flow_id, card_type,
+        def unbind_bank_card(card_no, bank_card_no, customer_no, serial_no, card_type,
                              devise='000001', remark='')
           service = 'unbind_bank_card'
 
           params = {
-            serial_no: flow_id,
+            serial_no: serial_no,
             customer_no: customer_no,
             card_no: card_no,
             bank_card_no: bank_card_no,
