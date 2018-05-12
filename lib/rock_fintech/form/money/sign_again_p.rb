@@ -28,7 +28,7 @@ module RockFintech
       #       * :order_id [String] 订单号
       #       * :url [String] 页面跳转 url
       #
-      def sign_again_p(card_no, out_serial_no, origin_serial_no, interface_type, amount, start_time, end_time, success_url, fail_url, callback_url, devise='000001', remark='')
+      def sign_again_p(card_no, out_serial_no, origin_serial_no, interface_type, unit_amount, amount, start_time, end_time, success_url, fail_url, callback_url, devise='000001', remark='')
         service = 'sign_again_p'
 
         params = {
@@ -36,6 +36,7 @@ module RockFintech
           out_serial_no: out_serial_no,
           origin_serial_no: origin_serial_no,
           interface_type: interface_type,
+          unit_amount: unit_amount,
           amount: amount,
           start_time: start_time,
           end_time: end_time,
