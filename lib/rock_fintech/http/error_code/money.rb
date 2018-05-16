@@ -31,7 +31,18 @@ module RockFintech
       def self.sign_transfer_p
         @_sign_transfer_p ||= []
       end
+      
+      def self.sign_payment_query
+        @_sign_payment_query ||= []
+      end
+      
+      def self.sign_repayment_query
+        @_sign_repayment_query ||= []
+      end
 
+      def self.sign_transfer_check
+        @_sign_transfer_check ||= []
+      end
     end # module ErrorCode
   end
 end

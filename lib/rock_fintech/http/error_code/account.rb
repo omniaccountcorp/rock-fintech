@@ -49,6 +49,9 @@ module RockFintech
         @_find_account_by_id ||= %w[RD000061 RD000089 RD000060 RD000063]
       end
 
+      def self.set_password_query
+        @_set_password_query ||= %w[]
+      end
     end # module ErrorCode
   end
 end
