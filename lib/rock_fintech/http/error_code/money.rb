@@ -32,6 +32,9 @@ module RockFintech
         @_sign_transfer_p ||= []
       end
 
+      def self.sign_transfer_check
+        @_sign_transfer_check ||= []
+      end
     end # module ErrorCode
   end
 end
