@@ -25,8 +25,8 @@ module RockFintech
       recursive_include_api('RockFintech::Form')
     end
 
-    def decode_notify_data(encryptkey, data)
-      # ::RockFintech::Http::Decode.decode_notify_data(encryptkey, data, @config)
+    def verify_data?(data)
+      Sign.verify(data, @config)
     end
 
     private

@@ -11,15 +11,16 @@ module RockFintech
         self.data_valid = true
 
         params.each do |key, value|
-          instance_variable_set("@#{key}", value)
+          self.instance_variable_set("@#{key}", value)
         end
 
         self.data = {} if self.data.nil? # 默认一定要有
 
         unless self.data_valid
-          self.data[:errorCode] = 'sign_valid_fail'
-          self.data[:errorMsg] = '数据签名错误'
+          self.data[:code] = 'sign_valid_fail'
+          self.data[:msg] = '数据签名错误'
         end
+
       end
 
       def [] key
@@ -36,7 +37,7 @@ module RockFintech
       end
 
       def http_success?
-        http_response && http_response.is_a?(Net::HTTPSuccess)
+        http_response && /^2/ =~ http_response.code.to_s
       end
 
       def http_fail?
