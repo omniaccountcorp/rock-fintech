@@ -28,6 +28,7 @@ module RockFintech
         #       * :end_time [Fixnum] 签约结束时间
         #       * :service [Object] 交易代码
         #
+
         def sign_transfer_query(card_no, devise="000001", remark='')
           service = "sign_transfer_query"
 
