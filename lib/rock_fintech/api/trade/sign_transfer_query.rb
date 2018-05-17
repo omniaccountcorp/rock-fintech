@@ -46,13 +46,3 @@ module RockFintech
     end
   end
 end
-
-        #      => "2018-05-09",
-        #     :sign_time => "16:26:45",
-        #  :third_custom => "",
-        #        :amount => "100000.00",
-        #   :unit_amount => "100000.00",
-        #    :start_time => 1525854340,
-        #      :end_time => 1589012740,
-        #       :service => "sign_transfer_query",
-        #   :sequence_id => "5435673822ec9107d088464c0cd07c50"
