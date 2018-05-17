@@ -22,7 +22,7 @@ module RockFintech
         #       * :asset_no [String] 标的号
         #       * :status	受托支付签约状态 [Integer] 0：普通标的 1：签约 2：未签约
         #
-        def trustee_pay_query(card_no, devise='000001', remark='')
+        def trustee_pay_query(card_no,asset_no devise='000001', remark='')
 
           service = 'trustee_pay_query'
 
