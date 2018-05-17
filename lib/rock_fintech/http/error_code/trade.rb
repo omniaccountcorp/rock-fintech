@@ -43,6 +43,10 @@ module RockFintech
       def self.authorization_p
         @_authorization_p ||= []
       end
+
+      def self.sign_transfer_query
+        @_sign_transfer_query ||= []
+      end
     end # module ErrorCode
   end # module http
 end # module rockfintech
