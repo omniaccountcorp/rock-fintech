@@ -15,6 +15,10 @@ module RockFintech
       def self.batch_end_credit_b
         @_batch_payment ||= %w[]
       end
+
+      def self.batch_coupon_b
+        @_batch_coupon_b ||= %w[]
+      end
     end # module ErrorCode
   end
 end
