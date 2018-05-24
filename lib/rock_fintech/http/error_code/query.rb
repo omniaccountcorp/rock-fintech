@@ -40,7 +40,7 @@ module RockFintech
         @_trustee_pay_query ||= %w[]
       end
 
-      def batch_new_query_coupon_b
+      def self.batch_new_query_coupon_b
         @_batch_new_query_coupon_b || %w[]
       end
     end # module ErrorCode

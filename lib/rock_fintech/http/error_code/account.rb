@@ -52,6 +52,10 @@ module RockFintech
       def self.set_password_query
         @_set_password_query ||= %w[]
       end
+
+      def self.binding_list
+        @_binding_list ||= %w[]
+      end
     end # module ErrorCode
   end
 end
