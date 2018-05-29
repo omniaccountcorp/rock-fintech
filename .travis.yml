@@ -14,3 +14,10 @@ notifications:
 sudo: false
 
 cache: bundler
+
+deploy:
+  skip_cleanup: true
+  provider: rubygems
+  api_key: "YOUR API KEY"
+  on:
+    tags: true
