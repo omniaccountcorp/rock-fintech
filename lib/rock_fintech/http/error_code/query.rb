@@ -35,6 +35,14 @@ module RockFintech
       def self.cnaps_query
         @_cnaps_query ||= %w[]
       end
+
+      def self.trustee_pay_query
+        @_trustee_pay_query ||= %w[]
+      end
+
+      def self.batch_new_query_coupon_b
+        @_batch_new_query_coupon_b || %w[]
+      end
     end # module ErrorCode
   end
 end

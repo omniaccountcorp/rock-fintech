@@ -2,8 +2,8 @@
 module RockFintech
   module Api
     module Account
-      module UnbindBankCard
-        # 解绑银行卡
+      module BindingList
+        # 电子账户绑卡关系查询
         #
         # @return [ Hash ] 结果集
         #   * :result [String] "S"/"F"/"P"
@@ -21,21 +21,16 @@ module RockFintech
         #       * :revoke_sign_date [String] 签约取消日期
         #       * :revoke_sign_time [String] 签约取消时间
         #
-        def unbind_bank_card(card_no, bank_card_no, customer_no, serial_no, card_type,
-                             devise='000001', remark='')
-          service = 'unbind_bank_card'
+        def binding_list(card_no, devise='000001', remark='')
+          service = 'binding_list'
 
           params = {
-            serial_no: serial_no,
-            customer_no: customer_no,
             card_no: card_no,
-            bank_card_no: bank_card_no,
-            card_type: card_type,
             client: devise,
             custom: remark,
           }
 
-          res = operate_post(:operate, service, params, Http::ErrorCode.set_password_p, ['RD000000'])
+          res = operate_post(:query, service, params, Http::ErrorCode.binding_list, ['RD000000'])
 
           res
         end
