@@ -3,3 +3,6 @@ language: ruby
 rvm:
   - 2.2.5
   - 2.4.1
+
+before_install:
+  - cp spec/support/config/config.uat.yml spec/support/config/config.yml
