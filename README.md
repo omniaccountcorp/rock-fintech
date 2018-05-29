@@ -1,4 +1,5 @@
 [![Gem Version](https://badge.fury.io/rb/rock_fintech.svg)](https://badge.fury.io/rb/rock_fintech)
+[![Build Status](https://travis-ci.com/laoshucheng/rock-fintech.svg?branch=master)](https://travis-ci.com/laoshucheng/rock-fintech)
 
 # RockFintech
 
