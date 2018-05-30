@@ -1,5 +1,6 @@
 [![Gem](https://img.shields.io/gem/v/rock_fintech.svg?style=flat)](https://github.com/laoshucheng/rock-fintech)
 [![Build Status](https://travis-ci.org/laoshucheng/rock-fintech.svg?branch=master)](https://travis-ci.org/laoshucheng/rock-fintech)
+[![codecov](https://codecov.io/gh/laoshucheng/rock-fintech/branch/master/graph/badge.svg)](https://codecov.io/gh/laoshucheng/rock-fintech)
 
 # RockFintech
 
