@@ -5,6 +5,9 @@ before_install:
 - cp spec/support/config/config.uat.yml spec/support/config/config.yml
 notifications:
   email:
+    recipients:
+      - gandalf@omniaccount.com
+      - tony@omniaccount.com        
     on_success: always
     on_failure: always
 sudo: false
