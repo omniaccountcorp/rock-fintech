@@ -33,10 +33,13 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.16"
   spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency "rspec", "~> 3.0"
   spec.add_development_dependency 'macaddr', '~> 1.7', '>= 1.7.1'
-  spec.add_development_dependency 'byebug', '~> 9.1'
-  spec.add_development_dependency 'faker', '~> 1.8', '>= 1.8.4'
   spec.add_development_dependency 'rest-client', '~> 2.0', '>= 2.0.2'
-  spec.add_development_dependency 'awesome_print'
+  spec.add_development_dependency "rspec", "~> 3.0"
+  spec.add_development_dependency 'faker', '~> 1.8', '>= 1.8.4'
+  spec.add_development_dependency 'byebug', '~> 9.1'
+  spec.add_development_dependency 'awesome_print', '~> 1.8'
+
+  spec.add_runtime_dependency 'macaddr', '~> 1.7', '>= 1.7.1'
+  spec.add_runtime_dependency 'rest-client', '~> 2.0', '>= 2.0.2'
 end
