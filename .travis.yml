@@ -6,7 +6,7 @@ before_install:
 notifications:
   email:
     recipients:
-      - tonylau1987@gmail.com        
+      - gandalf@omniaccount.com
     on_success: always
     on_failure: always
 sudo: false
