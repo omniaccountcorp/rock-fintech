@@ -20,7 +20,7 @@ module RockFintech
         @_batch_coupon_b ||= %w[]
       end
 
-      def batch_notify_resend_b
+      def self.batch_notify_resend_b
         @_batch_notify_resend_b ||= %w[]
       end
     end # module ErrorCode
