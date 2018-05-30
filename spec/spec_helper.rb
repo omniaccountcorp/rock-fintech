@@ -4,6 +4,12 @@ require "rock_fintech"
 require "awesome_print"
 Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each { |file| require file }
 
+require 'simplecov'
+SimpleCov.start
+
+require 'codecov'
+SimpleCov.formatter = SimpleCov::Formatter::Codecov
+
 Faker::Config.locale = 'zh-CN'
 
 # RockFintech.logger = Logger.new('tmp/test.log')

@@ -1,0 +1,20 @@
+language: ruby
+rvm:
+- 2.2.5
+before_install:
+- cp spec/support/config/config.uat.yml spec/support/config/config.yml
+notifications:
+  email:
+    on_success: always
+    on_failure: always
+sudo: false
+cache: bundler
+deploy:
+  script: echo "正在部署到 rubygems.org"
+  provider: rubygems
+  skip_cleanup: true
+  gem: rock_fintech
+  on:
+    tags: true
+  api_key:
+    secure: oATfUj4EPPVnhPL0S9Q52XPVonN/3sM3V0A4sO9ot6mUsQkg6jROT0Bel9lZGFRXAWv5JffQoQ5tg5zrk7SBl6KuD2qAUAtR5ypLydoJA9P++ItHIwN6NopPGt6F5Nf7ex60gxgnW0Az6lFpOSOYkmADTxlXv0pldNwD4DMzmJ3S4It9D2dHQMzRVg7SAMXdjBjIhPhddcy4nbFf0JHSpmREXEL6/a/y9jJNcAmOHSlCUmsw7DsyTv4nlzORY8XjSXYGbZYPlM9RVlU1Y6OhfZQhDW3X1BCWMGVPFc6UvtfH77C5culou4EDSagUC7TcY+5BX8M4ZqozbP7K5vsxuy0EU0RdjMa1DuikqcWB/tWGznqFyopItPmPYYCTyP5X4zoUyBp5CuVi+LCc5TY7AIg7GT0dAlrZ6un2gVgEjQRwOQm1dEvPCKJ/u9A27u1lrQ4N5ZbdpAZ7K/iTSEdg9LxBspE4Vavgy0T0lKYXmGjAs6x1Y3aiCkTtHVV+ER7IEcBiuLK6jX/4D6w3grXqbzBhHu74BjRQDE/EIQChHJW6LbtgikGkVw78UTInUKSxRZ78eToW/yTw5HiUsa3S/J+76XktELcZXmMA20Bnq7+8fKDiNwRXoHt/thE3U+BK1TlxnpOFRVkc+HK+DfNRrQjz+H/2zSxCi27OqsXHL6U=

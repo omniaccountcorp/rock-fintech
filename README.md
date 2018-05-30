@@ -1,5 +1,9 @@
 # RockFintech
 
+[![Gem](https://img.shields.io/gem/v/rock_fintech.svg?style=flat)](https://rubygems.org/gems/rock_fintech)
+[![Build Status](https://travis-ci.org/omniaccountcorp/rock-fintech.svg?branch=master)](https://travis-ci.org/omniaccountcorp/rock-fintech)
+[![codecov](https://codecov.io/gh/omniaccountcorp/rock-fintech/branch/master/graph/badge.svg)](https://codecov.io/gh/omniaccountcorp/rock-fintech)
+
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/rock_fintech`. To experiment with that code, run `bin/console` for an interactive prompt.
 
 TODO: Delete this and the text above, and describe your gem
